@@ -1,0 +1,2 @@
+# yoguiscoin
+Blockchain en AWS
