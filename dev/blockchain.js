@@ -1,9 +1,24 @@
 function Blockchain() {
 	this.chain = [];
-	this.pendingTransactions = [];
-
-	this.currentNodeUrl = currentNodeUrl;
-	this.networkNodes = [];
-
-	this.createNewBlock(100, '0', '0');
+	this.newTransactions = [];	
 };
+
+
+Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash) {
+	const newBlock = {
+		index: this.chain.length + 1,
+		timestamp: Date.now(),
+		transactions: this.pendingTransactions,
+		nonce: nonce,
+		hash: hash,
+		previousBlockHash: previousBlockHash
+	};
+
+	this.pendingTransactions = [];
+	this.chain.push(newBlock);
+
+	return newBlock;
+};
+
+
+module.exports = Blockchain;
