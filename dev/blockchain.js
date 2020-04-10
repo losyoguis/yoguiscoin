@@ -13,10 +13,8 @@ Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash) {
 		hash: hash,
 		previousBlockHash: previousBlockHash
 	};
-
 	this.pendingTransactions = [];
 	this.chain.push(newBlock);
-
 	return newBlock;
 };
 
@@ -32,10 +30,15 @@ Blockchain.prototype.createNewTransaction = function(amount, sender, recipient) 
 		sender: sender,
 		recipient: recipient,
 };
-
 	this.pendingTransactions.push(newTransaction);
-
 	return this.getLastBlock()['index'] + 1;
+};
+
+
+Blockchain.prototype.hashBlock = function(previousBlockHash, currentBlockData, nonce) {
+	const dataAsString = previousBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
+	const hash = sha256(dataAsString);
+	return hash;
 };
 
 
