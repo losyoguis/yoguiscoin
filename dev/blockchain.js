@@ -19,6 +19,8 @@ Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash) {
 };
 
 
+const sha256 = require('sha256');
+
 Blockchain.prototype.getLastBlock = function() {
 	return this.chain[this.chain.length - 1];
 };
