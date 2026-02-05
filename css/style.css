@@ -1,0 +1,16 @@
+body{
+  background:#0b0b0b;
+  color:#f5c96b;
+  font-family:Arial;
+  text-align:center;
+}
+.logo{
+  width:120px;
+  margin-top:20px;
+}
+.card{
+  background:#151515;
+  margin:20px;
+  padding:20px;
+  border-radius:12px;
+}
