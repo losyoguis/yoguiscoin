@@ -1,2 +1,2 @@
 # yoguiscoin
-Blockchain en AWS
+Blockchain del Neuroverbs
